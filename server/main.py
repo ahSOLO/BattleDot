@@ -1,10 +1,9 @@
-import asyncio, websockets, sys, time, json, os, nest_asyncio
+import asyncio, websockets, sys, time, json, os
 import helpers, game
 from logger import connection_logger
 
 from dotenv import load_dotenv
 load_dotenv()
-nest_asyncio.apply()
 
 from constants import GameState, STATE, USERS, UPDATE_DELAY_DELTA
 

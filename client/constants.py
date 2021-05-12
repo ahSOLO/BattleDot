@@ -19,7 +19,7 @@ class ClientState(IntEnum):
 STATE = {"websocket": None, "client_state" : ClientState.DEFAULT, "previous_targets" : set()}
 
 MAX_UPDATES_PER_SECOND = 60
-UPDATE_DELAY_DELTA = 0 # 1./MAX_UPDATES_PER_SECOND
+UPDATE_DELAY_DELTA = 1./MAX_UPDATES_PER_SECOND
 
 AXIS_NUMBERS=range(1, 11)
 AXIS_LETTERS=string.ascii_uppercase[0:10]

@@ -40,7 +40,7 @@ def user_action(data, user):
             attacking_player = helpers.get_websocket_from_remote_port(attacking_player_port, PLAYERS)
             # Notify the designated attacker that their previous opponent has left along with the game state so client knows how to respond
             game_logger.debug(f"Notifying player from port {attacking_player_port} that their opponent has left and a new one shall be assigned")
-            asyncio.run(helpers.send(attacking_player, json.dumps({"type" : "notification", "content": "opponent left", "state": STATE["game_state"] })))
+            asyncio.ensure_future(helpers.send(attacking_player, json.dumps({"type" : "notification", "content": "opponent left", "state": STATE["game_state"] })))
     else:
     # Other user actions are confined to certain game states
         if STATE["game_state"] == GameState.LOBBY:
@@ -94,7 +94,7 @@ def update():
                 # Generate a random coordinate to be the player's ship position
                 ship_position = str(AXIS_NUMBERS[random.randint(0, 9)]) + AXIS_LETTERS[random.randint(0, 9)]
                 STATE["game_boards"][player.remote_address[1]] = ship_position
-                asyncio.run(helpers.send(player, json.dumps({"type" : "user_message", "content": f"Your ship is positioned at {ship_position}!"})))
+                asyncio.ensure_future(helpers.send(player, json.dumps({"type" : "user_message", "content": f"Your ship is positioned at {ship_position}!"})))
             game_logger.debug(f"Game boards have been set and co-ordinates of player ships have been assigned: {str(STATE['game_boards'])}")
             STATE["entering_state"] = False
         # Ensure there are still more than 2 players in the game before starting
@@ -144,12 +144,12 @@ def update():
                     player = helpers.get_websocket_from_remote_port(key, PLAYERS)
                     game_logger.info(f"The ship belonging to the player from port {str(player.remote_address[1])} has been hit. Now notifying them and removing them and their board from the game")
                     PLAYERS.discard(player)
-                    asyncio.run(helpers.send(player, json.dumps({"type" : "notification", "content": "you lose" })))
+                    asyncio.ensure_future(helpers.send(player, json.dumps({"type" : "notification", "content": "you lose" })))
                     STATE["game_boards"].pop(key)
             STATE["entering_state"] = False
         if len(PLAYERS) == 1:
             winner = PLAYERS.pop()
-            asyncio.run(helpers.send(winner, json.dumps({"type" : "notification", "content": "you win" })))    
+            asyncio.ensure_future(helpers.send(winner, json.dumps({"type" : "notification", "content": "you win" })))    
             game_logger.info(f"Player from port {str(winner.remote_address[1])} is the sole surviver. Now notifying all users that they have won the game.")
             helpers.message_all(
                 USERS, 

@@ -1,0 +1,41 @@
+2021-05-11 22:15:23,039 — Connection Log — INFO — Server is running on port 8080
+2021-05-11 22:15:23,056 — Game Log — INFO — The game lobby is now open.
+2021-05-11 22:15:24,533 — Connection Log — INFO — Client connected from remote port 42552
+2021-05-11 22:15:24,990 — Connection Log — INFO — Client connected from remote port 42556
+2021-05-11 22:15:26,059 — Game Log — DEBUG — 0 out of 2 players are ready. Notifying all users on the lobby status.
+2021-05-11 22:15:26,572 — Connection Log — DEBUG — 'ready' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:15:26,572 — Game Log — DEBUG — Adding user from port 42552 to the list of ready players
+2021-05-11 22:15:27,820 — Connection Log — DEBUG — 'ready' action was received from client with remote port 42556, now calling the user_action function.
+2021-05-11 22:15:27,820 — Game Log — DEBUG — Adding user from port 42556 to the list of ready players
+2021-05-11 22:15:29,079 — Game Log — DEBUG — 2 out of 2 players are ready. Notifying all users on the lobby status.
+2021-05-11 22:15:29,096 — Game Log — INFO — All users are ready. Now broadcasting the game start message to all players.
+2021-05-11 22:15:29,113 — Game Log — DEBUG — Game boards have been set and co-ordinates of player ships have been assigned: OrderedDict([(42556, '9D'), (42552, '7I')])
+2021-05-11 22:15:29,113 — Game Log — DEBUG — Now commencing the first turn of the game.
+2021-05-11 22:15:29,130 — Game Log — DEBUG — Players have been notified that turn has started. Now listening for player attack targets.
+2021-05-11 22:15:44,576 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:15:44,584 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42556, now calling the user_action function.
+2021-05-11 22:15:44,593 — Game Log — DEBUG — All player targets have been received: {42556: '9A', 42552: '8D'}. Proceeding to calculate hits.
+2021-05-11 22:15:44,610 — Game Log — DEBUG — The turn has ended. A status update has been sent to all users: A total of 0 ship(s) have been sunk and there are 2 players remaining.
+2021-05-11 22:15:44,627 — Game Log — DEBUG — Players have been notified that turn has started. Now listening for player attack targets.
+2021-05-11 22:15:44,994 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:15:45,003 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42556, now calling the user_action function.
+2021-05-11 22:15:45,012 — Game Log — DEBUG — All player targets have been received: {42556: '3E', 42552: '2I'}. Proceeding to calculate hits.
+2021-05-11 22:15:45,029 — Game Log — DEBUG — The turn has ended. A status update has been sent to all users: A total of 0 ship(s) have been sunk and there are 2 players remaining.
+2021-05-11 22:15:45,046 — Game Log — DEBUG — Players have been notified that turn has started. Now listening for player attack targets.
+2021-05-11 22:16:04,590 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:16:04,590 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42556, now calling the user_action function.
+2021-05-11 22:16:04,606 — Game Log — DEBUG — All player targets have been received: {42556: '10B', 42552: '6F'}. Proceeding to calculate hits.
+2021-05-11 22:16:04,623 — Game Log — DEBUG — The turn has ended. A status update has been sent to all users: A total of 0 ship(s) have been sunk and there are 2 players remaining.
+2021-05-11 22:16:04,640 — Game Log — DEBUG — Players have been notified that turn has started. Now listening for player attack targets.
+2021-05-11 22:16:04,994 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:16:04,995 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42556, now calling the user_action function.
+2021-05-11 22:16:05,010 — Game Log — DEBUG — All player targets have been received: {42556: '4J', 42552: '7A'}. Proceeding to calculate hits.
+2021-05-11 22:16:05,027 — Game Log — DEBUG — The turn has ended. A status update has been sent to all users: A total of 0 ship(s) have been sunk and there are 2 players remaining.
+2021-05-11 22:16:05,044 — Game Log — DEBUG — Players have been notified that turn has started. Now listening for player attack targets.
+2021-05-11 22:16:08,120 — Connection Log — INFO — Client from remote port 42556 has closed their connection
+2021-05-11 22:16:08,120 — Game Log — DEBUG — calling 'exit' action on player from port 42556
+2021-05-11 22:16:08,136 — Game Log — INFO — Returning to the lobby due to insufficient players in the game
+2021-05-11 22:16:08,136 — Connection Log — DEBUG — 'attack' action was received from client with remote port 42552, now calling the user_action function.
+2021-05-11 22:16:08,153 — Game Log — INFO — The game lobby is now open.
+2021-05-11 22:16:08,792 — Connection Log — INFO — Client from remote port 42552 has closed their connection
+2021-05-11 22:16:08,792 — Game Log — DEBUG — calling 'exit' action on player from port 42552
