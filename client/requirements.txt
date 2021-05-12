@@ -1,0 +1,2 @@
+python-dotenv==0.17.1
+websockets==9.0.1
