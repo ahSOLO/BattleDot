@@ -5,7 +5,7 @@ from logger import connection_logger
 from dotenv import load_dotenv
 load_dotenv()
 
-from constants import GameState, STATE, USERS, UPDATE_DELAY_DELTA
+from constants import STATE, USERS, UPDATE_DELAY_DELTA
 
 import threading
 

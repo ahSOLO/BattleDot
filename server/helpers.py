@@ -17,7 +17,8 @@ def message_all(users, data):
     clients_copy = users.copy()
     for client in clients_copy:
         try:
-            asyncio.ensure_future(send(client, json.dumps(data)))
+            loop = asyncio.new_event_loop()
+            loop.run_until_complete(send(client, json.dumps(data)))
         except websockets.ConnectionClosed:
             connection_logger.info(f"Could not deliver message to client from remote port {str(client.remote_address[1])} due to closed connection")
         except:
